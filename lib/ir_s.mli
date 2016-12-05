@@ -35,7 +35,7 @@ end
 module type HASH = sig
   include Ir_hum.S
   val digest: Cstruct.t -> t
-  val has_kind: [> `SHA1] -> bool
+  val has_kind: [> `SHA1 | `SHA_256 | `SHA3_256 | `BLAKE2B_256 ] -> bool
   val to_raw: t -> Cstruct.t
   val of_raw: Cstruct.t -> t
   val digest_size: int

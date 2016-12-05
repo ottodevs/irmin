@@ -836,7 +836,7 @@ module Hash: sig
     val digest: Cstruct.t -> t
     (** Compute a deterministic store key from a {!Cstruct.t} value. *)
 
-    val has_kind: [> `SHA1] -> bool
+    val has_kind: [> `SHA1 | `SHA_256 | `SHA3_256 | `BLAKE2B_256 ] -> bool
     (** The kind of generated hash. *)
 
     val to_raw: t -> Cstruct.t
